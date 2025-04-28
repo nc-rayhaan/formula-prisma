@@ -129,15 +129,6 @@ async function main() {
       points: 4865,
       championships: 7,
       teamId: mercedesTeam.id,
-      previousTeams: {
-        create: [
-          {
-            teamName: "McLaren",
-            startYear: 2007,
-            endYear: 2012,
-          },
-        ],
-      },
     },
   });
 
@@ -150,9 +141,6 @@ async function main() {
       points: 3088,
       championships: 3,
       teamId: redBullTeam.id,
-      previousTeams: {
-        create: [],
-      },
     },
   });
 
@@ -165,15 +153,6 @@ async function main() {
       points: 1085,
       championships: 0,
       teamId: ferrariTeam.id,
-      previousTeams: {
-        create: [
-          {
-            teamName: "Sauber",
-            startYear: 2018,
-            endYear: 2018,
-          },
-        ],
-      },
     },
   });
 
@@ -186,9 +165,6 @@ async function main() {
       points: 596,
       championships: 0,
       teamId: mcLarenTeam.id,
-      previousTeams: {
-        create: [],
-      },
     },
   });
 
@@ -201,15 +177,6 @@ async function main() {
       points: 421,
       championships: 0,
       teamId: mercedesTeam.id,
-      previousTeams: {
-        create: [
-          {
-            teamName: "Williams",
-            startYear: 2019,
-            endYear: 2021,
-          },
-        ],
-      },
     },
   });
 
@@ -222,25 +189,6 @@ async function main() {
       points: 1462,
       championships: 0,
       teamId: redBullTeam.id,
-      previousTeams: {
-        create: [
-          {
-            teamName: "Sauber",
-            startYear: 2011,
-            endYear: 2012,
-          },
-          {
-            teamName: "McLaren",
-            startYear: 2013,
-            endYear: 2013,
-          },
-          {
-            teamName: "Force India/Racing Point",
-            startYear: 2014,
-            endYear: 2020,
-          },
-        ],
-      },
     },
   });
 
@@ -253,15 +201,6 @@ async function main() {
       points: 2411,
       championships: 2,
       teamId: astonMartinTeam.id,
-      previousTeams: {
-        create: [
-          { teamName: "Minardi", startYear: 2001, endYear: 2001 },
-          { teamName: "Renault", startYear: 2003, endYear: 2006 },
-          { teamName: "McLaren", startYear: 2007, endYear: 2007 },
-          { teamName: "Ferrari", startYear: 2010, endYear: 2014 },
-          { teamName: "Alpine", startYear: 2021, endYear: 2022 },
-        ],
-      },
     },
   });
 
@@ -274,13 +213,6 @@ async function main() {
       points: 909,
       championships: 0,
       teamId: ferrariTeam.id,
-      previousTeams: {
-        create: [
-          { teamName: "Toro Rosso", startYear: 2015, endYear: 2017 },
-          { teamName: "Renault", startYear: 2017, endYear: 2018 },
-          { teamName: "McLaren", startYear: 2019, endYear: 2020 },
-        ],
-      },
     },
   });
 
@@ -293,16 +225,6 @@ async function main() {
       points: 382,
       championships: 0,
       teamId: alpineTeam.id,
-      previousTeams: {
-        create: [
-          { teamName: "Manor", startYear: 2016, endYear: 2016 },
-          {
-            teamName: "Force India/Racing Point",
-            startYear: 2017,
-            endYear: 2018,
-          },
-        ],
-      },
     },
   });
 
@@ -315,13 +237,6 @@ async function main() {
       points: 413,
       championships: 0,
       teamId: alpineTeam.id,
-      previousTeams: {
-        create: [
-          { teamName: "Toro Rosso", startYear: 2017, endYear: 2019 },
-          { teamName: "Red Bull", startYear: 2019, endYear: 2020 },
-          { teamName: "AlphaTauri", startYear: 2020, endYear: 2022 },
-        ],
-      },
     },
   });
 
@@ -334,12 +249,6 @@ async function main() {
       points: 1795,
       championships: 0,
       teamId: kickSauberTeam.id,
-      previousTeams: {
-        create: [
-          { teamName: "Williams", startYear: 2013, endYear: 2016 },
-          { teamName: "Mercedes", startYear: 2017, endYear: 2021 },
-        ],
-      },
     },
   });
 
@@ -352,9 +261,6 @@ async function main() {
       points: 97,
       championships: 0,
       teamId: mcLarenTeam.id,
-      previousTeams: {
-        create: [],
-      },
     },
   });
 
@@ -367,12 +273,6 @@ async function main() {
       points: 183,
       championships: 0,
       teamId: haasTeam.id,
-      previousTeams: {
-        create: [
-          { teamName: "McLaren", startYear: 2014, endYear: 2014 },
-          { teamName: "Renault", startYear: 2016, endYear: 2016 },
-        ],
-      },
     },
   });
 
@@ -385,14 +285,6 @@ async function main() {
       points: 530,
       championships: 0,
       teamId: haasTeam.id,
-      previousTeams: {
-        create: [
-          { teamName: "Williams", startYear: 2010, endYear: 2010 },
-          { teamName: "Force India", startYear: 2012, endYear: 2012 },
-          { teamName: "Sauber", startYear: 2013, endYear: 2013 },
-          { teamName: "Renault", startYear: 2017, endYear: 2019 },
-        ],
-      },
     },
   });
 
@@ -405,9 +297,6 @@ async function main() {
       points: 14,
       championships: 0,
       teamId: kickSauberTeam.id,
-      previousTeams: {
-        create: [],
-      },
     },
   });
 
@@ -420,9 +309,6 @@ async function main() {
       points: 53,
       championships: 0,
       teamId: visaRBTeam.id,
-      previousTeams: {
-        create: [],
-      },
     },
   });
 
@@ -435,9 +321,6 @@ async function main() {
       points: 2,
       championships: 0,
       teamId: visaRBTeam.id,
-      previousTeams: {
-        create: [],
-      },
     },
   });
 
@@ -450,12 +333,6 @@ async function main() {
       points: 223,
       championships: 0,
       teamId: williamsTeam.id,
-      previousTeams: {
-        create: [
-          { teamName: "Toro Rosso", startYear: 2019, endYear: 2019 },
-          { teamName: "Red Bull", startYear: 2019, endYear: 2020 },
-        ],
-      },
     },
   });
 
@@ -468,9 +345,6 @@ async function main() {
       points: 0,
       championships: 0,
       teamId: williamsTeam.id,
-      previousTeams: {
-        create: [],
-      },
     },
   });
 
@@ -483,12 +357,6 @@ async function main() {
       points: 246,
       championships: 0,
       teamId: astonMartinTeam.id,
-      previousTeams: {
-        create: [
-          { teamName: "Williams", startYear: 2017, endYear: 2018 },
-          { teamName: "Racing Point", startYear: 2019, endYear: 2020 },
-        ],
-      },
     },
   });
 
@@ -501,15 +369,6 @@ async function main() {
       points: 1329,
       championships: 0,
       teamId: visaRBTeam.id,
-      previousTeams: {
-        create: [
-          { teamName: "Toro Rosso", startYear: 2012, endYear: 2013 },
-          { teamName: "Red Bull", startYear: 2014, endYear: 2018 },
-          { teamName: "Renault", startYear: 2019, endYear: 2020 },
-          { teamName: "McLaren", startYear: 2021, endYear: 2022 },
-          { teamName: "AlphaTauri", startYear: 2023, endYear: 2024 },
-        ],
-      },
     },
   });
   const oliverBearman = await prisma.driver.create({
@@ -521,9 +380,6 @@ async function main() {
       points: 7,
       championships: 0,
       teamId: haasTeam.id,
-      previousTeams: {
-        create: [],
-      },
     },
   });
   const francoColapinto = await prisma.driver.create({
@@ -535,9 +391,6 @@ async function main() {
       points: 5,
       championships: 0,
       teamId: williamsTeam.id,
-      previousTeams: {
-        create: [],
-      },
     },
   });
 
