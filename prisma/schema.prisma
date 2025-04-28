@@ -33,18 +33,9 @@ model Driver {
   championships   Int
   currentTeam     Team     @relation(fields: [teamId], references: [id])
   teamId          Int
-  previousTeams   PreviousTeam[]
   raceResults     RaceResult[]
 }
 
-model PreviousTeam {
-  id        Int      @id @default(autoincrement())
-  driver    Driver   @relation(fields: [driverId], references: [id])
-  driverId  Int
-  teamName  String
-  startYear Int
-  endYear   Int
-}
 
 model Circuit {
   id       Int      @id @default(autoincrement())
