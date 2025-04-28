@@ -1,13 +1,21 @@
+import { Driver, EngineProvider, Team } from "@prisma/client";
 import {
+  calculateTotalPointsByDriver,
   getBritishDrivers,
   getEngineProviders,
   getRaceResultByRaceId,
+  getRacesWonByDriver,
   getTeamsByEngineProvider,
 } from "../sprint";
+import {
+  RaceResultType,
+  RaceWithWinningDriver,
+  TeamWithEngineProvider,
+} from "../types";
 
 describe("getEngineProviders(", () => {
   test("returns a list of engine providers", async () => {
-    const engineProviders = await getEngineProviders();
+    const engineProviders: EngineProvider[] = await getEngineProviders();
     expect(engineProviders).toEqual([
       { id: 1, name: "Mercedes" },
       { id: 2, name: "Ferrari" },
@@ -17,70 +25,9 @@ describe("getEngineProviders(", () => {
   });
 });
 
-describe("getTeamsByEngineProvider", () => {
-  test("returns a list of teams that use a specific engine provider", async () => {
-    const teamsWithMercedesEngines = await getTeamsByEngineProvider(1);
-    const teamsWithFerrariEngines = await getTeamsByEngineProvider(2);
-    expect(teamsWithMercedesEngines).toEqual([
-      {
-        id: 1,
-        name: "Mercedes-AMG Petronas Formula One Team",
-        base: "Brackley, United Kingdom",
-        principal: "Toto Wolff",
-        engineProviderId: 1,
-      },
-      {
-        id: 5,
-        name: "McLaren F1 Team",
-        base: "Woking, United Kingdom",
-        principal: "Andrea Stella",
-        engineProviderId: 1,
-      },
-      {
-        id: 6,
-        name: "Aston Martin Aramco Cognizant Formula One Team",
-        base: "Silverstone, United Kingdom",
-        principal: "Mike Krack",
-        engineProviderId: 1,
-      },
-      {
-        id: 9,
-        name: "Williams Racing",
-        base: "Grove, United Kingdom",
-        principal: "James Vowles",
-        engineProviderId: 1,
-      },
-    ]);
-
-    expect(teamsWithFerrariEngines).toEqual([
-      {
-        id: 2,
-        name: "Scuderia Ferrari",
-        base: "Maranello, Italy",
-        principal: "Frédéric Vasseur",
-        engineProviderId: 2,
-      },
-      {
-        id: 7,
-        name: "Stake F1 Team Kick Sauber",
-        base: "Hinwil, Switzerland",
-        principal: "Alessandro Alunni Bravi",
-        engineProviderId: 2,
-      },
-      {
-        id: 8,
-        name: "MoneyGram Haas F1 Team",
-        base: "Kannapolis, United States",
-        principal: "Ayao Komatsu",
-        engineProviderId: 2,
-      },
-    ]);
-  });
-});
-
-describe("getBritishDrivers", () => {
+describe.skip("getBritishDrivers", () => {
   test("returns a list of british drivers", async () => {
-    const britishDrivers = await getBritishDrivers();
+    const britishDrivers: Driver[] = await getBritishDrivers();
 
     expect(britishDrivers).toEqual([
       {
@@ -127,9 +74,99 @@ describe("getBritishDrivers", () => {
   });
 });
 
-describe("getRaceResultByRaceId", () => {
+describe.skip("getTeamsByEngineProvider", () => {
+  test("returns an array of teams and engine provider info when passed an engineProviderId", async () => {
+    const teamsUsingHondaEngines: TeamWithEngineProvider[] =
+      await getTeamsByEngineProvider(4);
+    expect(teamsUsingHondaEngines).toEqual([
+      {
+        id: 4,
+        name: "Oracle Red Bull Racing",
+        base: "Milton Keynes, United Kingdom",
+        principal: "Christian Horner",
+        engineProviderId: 4,
+        engineProvider: { id: 4, name: "Honda" },
+      },
+      {
+        id: 10,
+        name: "Visa Cash App RB Formula One Team",
+        base: "Faenza, Italy",
+        principal: "Laurent Mekies",
+        engineProviderId: 4,
+        engineProvider: { id: 4, name: "Honda" },
+      },
+    ]);
+  });
+});
+
+describe.skip("getRacesWonByDriver", () => {
+  test("returns a list of races won by a chosen driver including information about the races", async () => {
+    const racesWonByLandoNorris: RaceWithWinningDriver[] =
+      await getRacesWonByDriver(4);
+    expect(racesWonByLandoNorris).toEqual([
+      {
+        race: {
+          id: 19,
+          grandPrixName: "Miami Grand Prix",
+          circuitId: 19,
+          date: expect.any(Date),
+        },
+        driver: {
+          firstName: "Lando",
+          lastName: "Norris",
+        },
+      },
+      {
+        race: {
+          id: 15,
+          grandPrixName: "Dutch Grand Prix",
+          circuitId: 15,
+          date: expect.any(Date),
+        },
+        driver: {
+          firstName: "Lando",
+          lastName: "Norris",
+        },
+      },
+      {
+        race: {
+          id: 6,
+          grandPrixName: "Singapore Grand Prix",
+          circuitId: 6,
+          date: expect.any(Date),
+        },
+        driver: {
+          firstName: "Lando",
+          lastName: "Norris",
+        },
+      },
+      {
+        race: {
+          id: 4,
+          grandPrixName: "Abu Dhabi Grand Prix",
+          circuitId: 4,
+          date: expect.any(Date),
+        },
+        driver: {
+          firstName: "Lando",
+          lastName: "Norris",
+        },
+      },
+    ]);
+  });
+});
+
+describe.skip("calculateTotalPointsByDriver", () => {
+  test("returns a number representing the total number of points scored by a chosen driver from all the races", async () => {
+    const totalPointsScoredByMaxVerstappen: number =
+      await calculateTotalPointsByDriver(2);
+    expect(totalPointsScoredByMaxVerstappen).toBe(401);
+  });
+});
+
+describe.skip("getRaceResultByRaceId", () => {
   test("returns race results by provided raceId", async () => {
-    const silverstoneResults = await getRaceResultByRaceId(1);
+    const silverstoneResults: RaceResultType = await getRaceResultByRaceId(1);
 
     expect(silverstoneResults).toEqual({
       grandPrixName: "British Grand Prix",
