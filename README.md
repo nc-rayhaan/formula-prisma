@@ -2,7 +2,7 @@
 
 This sprint is designed to help you get hands-on experience with **Prisma** by working with real world Formula 1 data from last year's season!
 
-You'll build queries and explore relationships in a databse database full of F1 drivers, teams, circuits, and race results!
+You'll build queries and explore relationships in a database full of F1 drivers, teams, circuits, and race results!
 
 ---
 
